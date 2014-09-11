@@ -1,0 +1,205 @@
+/**
+ * === Table of Contents ===
+ * 
+ * 1. Global Styles
+ * 2. Structural
+ * 3. Header
+ * 4. Notification Bar
+ * 5. Product Grid
+ * 6. Cart
+ * 7. Footer
+ *
+ * === Color Scheme ===
+ *
+ * @blue:  #2b2e35;
+ * @slate: #434f5b;
+ * @cream: #f2f2f2;
+ * @green: #b8d87f;
+ * @gray:  #2e2e2e;
+ *
+ * === Media Breakpoints ===
+ *
+ * Mobile:         Default
+ * Small Devices:  @media (min-width: 768px) {}
+ * Medium Devices: @media (min-width: 992px) {}
+ * Large devices:  @media (min-width: 1200px) {}
+ * 
+ */
+
+@import url(http://fonts.googleapis.com/css?family=Fira+Sans:500);
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,400italic);
+
+/* === 1. Global Styles === */
+
+* {
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  color: #2b2e35;
+  background-color: #f2f2f2;
+}
+
+h1,h2,h3,h4,h5 {
+  font-family: 'Fira Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 500;
+}
+
+a {
+  color: #2e2e2e;
+  -webkit-transition: color ease-in-out 0.3s;
+          transition: color ease-in-out 0.3s;
+}
+
+a:hover,
+a:focus {
+  text-decoration: none;
+  color: #b8d87f;
+}
+
+/* === 2. Structural === */
+
+.container {
+  margin: 0 auto;
+}
+
+/* === 3. Header === */
+
+header {
+  text-align: center;
+  background-color: #2b2e35;
+}
+
+header h1 {
+  color: #434f5b;
+}
+
+header h1 a {
+  color: #aab5c0;
+}
+
+header nav {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+header a {
+  color: #aab5c0;
+}
+
+.company-logo {
+  height: 1.5em;
+  width: 1.5em;
+  vertical-align: middle;
+}
+
+.company-logo path {
+  fill: #f0eea6;
+  -webkit-transition: fill ease-in-out 0.3s;
+          transition: fill ease-in-out 0.3s;
+}
+
+header a:hover .company-logo path {
+  fill: #f0eea6;
+}
+
+@media (min-width: 768px) {
+
+  header {
+    text-align: left;
+  }
+
+  header .container { display: table; }
+
+  header h1,
+  header nav {
+    float: none;
+    display: table-cell;
+    vertical-align: middle;
+    height: 120px;
+  }
+
+  header h1 { }
+
+  header nav {
+    text-align: right;
+  }
+
+}
+
+.search-toggle {
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+  vertical-align: middle;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+.search-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.search-icon path {
+  fill: #434f5b;
+  -webkit-transition: fill ease-in-out 0.3s;
+          transition: fill ease-in-out 0.3s;
+}
+
+.search-toggle:hover .search-icon path {
+  fill: #b8d87f;
+}
+
+.search-input {
+  font-size: 14px;
+}
+
+.cart-toggle {
+  color: #f2f2f2;
+}
+
+.cart-icon {
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+}
+
+.cart-icon path {
+  fill: #f2f2f2;
+  -webkit-transition: fill ease-in-out 0.3s;
+          transition: fill ease-in-out 0.3s;
+}
+
+.cart-toggle:hover .cart-icon path {
+  fill: #b8d87f;
+}
+
+.shop-notifications {
+  height: 30px;
+  background-color: #aab5c0;
+}
+
+
+/* === 4. Notification Bar Styles === */
+
+/* === 5. Product Grid Styles === */
+
+.item {
+  position: relative;
+  min-height: 250px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+/* === 6. Cart Styles === */
+
+/* === 7. Footer Styles === */
+
+footer {
+  min-height: 200px;
+  background-color: #434f5b;
+}

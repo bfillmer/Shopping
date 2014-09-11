@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html class="no-js" ng-app="ShoppingStore">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Shopping</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+</head>
+
+<body ng-controller="CartController as cart">
+
+  <header>
+    <div class="container">
+    <h1>
+      <a href="#">
+        <svg class="company-logo" xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M147.722 208.427c-53.97 0-97.722 21.25-97.722 47.46s43.752 47.458 97.722 47.458c53.97 0 97.723-21.246 97.723-47.457s-43.753-47.46-97.723-47.46zm6.675 71.732l-.003 6.354-12.39-.02v-5.685c-5.94-.384-13.794-1.98-19.577-4.33l4.1-10.472c5.366 1.547 12.752 3.42 19.132 3.43 1.406.004 2.765-.086 4.044-.287 6.18-.98 7.74-5.052.465-7.364-6.144-2.037-27.294-4.19-27.292-17.174 0-5.38 5.498-12.76 19.14-14.924v-6.45l12.39.02v5.92c5.308.28 10.724 1.005 16.975 2.45l-3.328 10.705c-4.026-1.012-10.426-2.73-16.765-2.74-.463 0-.926.008-1.39.027-8.37.33-8.975 4.816-3.33 6.898 11.578 3.863 28.348 7.158 28.344 18.623.015 8.86-9.387 13.892-20.517 15.02zm68.642 22.087c9.045-4.395 16.558-9.53 22.404-15.305v18.89c0 26.208-43.752 47.458-97.723 47.458-53.968 0-97.72-21.25-97.72-47.46v-18.888c5.847 5.773 13.357 10.91 22.405 15.305 20.356 9.887 47.104 15.33 75.316 15.33 28.216 0 54.963-5.443 75.32-15.33zm0 99.885c9.045-4.393 16.558-9.53 22.404-15.303v19.226c0 26.21-43.752 47.46-97.723 47.46-53.97 0-97.72-21.25-97.72-47.46V386.83c5.846 5.77 13.356 10.91 22.404 15.302 20.356 9.887 47.104 15.332 75.316 15.332 28.216 0 54.963-5.445 75.32-15.332zm0-49.942c9.045-4.395 16.558-9.533 22.404-15.305v18.887c0 26.21-43.752 47.46-97.723 47.46-53.97 0-97.72-21.25-97.72-47.46v-18.887c5.846 5.77 13.356 10.91 22.404 15.305 20.356 9.885 47.104 15.33 75.316 15.33 28.216 0 54.963-5.445 75.32-15.33zm216.555 49.942c9.046-4.393 16.56-9.53 22.405-15.303v19.226c0 26.21-43.752 47.46-97.723 47.46-53.97 0-97.722-21.25-97.722-47.46V386.83c5.847 5.77 13.357 10.91 22.405 15.302 20.356 9.887 47.104 15.332 75.316 15.332 28.215 0 54.962-5.445 75.32-15.332zm0-99.885c9.046-4.395 16.56-9.53 22.405-15.305v18.89c0 26.208-43.752 47.458-97.723 47.458-53.97 0-97.722-21.25-97.722-47.46v-18.888c5.847 5.773 13.357 10.91 22.405 15.305 20.356 9.887 47.104 15.33 75.316 15.33 28.215 0 54.962-5.443 75.32-15.33zm0 49.943c9.046-4.395 16.56-9.533 22.405-15.305v18.887c0 26.21-43.752 47.46-97.723 47.46-53.97 0-97.722-21.25-97.722-47.46v-18.887c5.847 5.77 13.357 10.91 22.405 15.305 20.356 9.885 47.104 15.33 75.316 15.33 28.215 0 54.962-5.445 75.32-15.33zm0-99.943c9.046-4.395 16.56-9.53 22.405-15.305v18.89c0 26.208-43.752 47.458-97.723 47.458-53.97 0-97.722-21.25-97.722-47.46v-18.888c5.847 5.773 13.357 10.91 22.405 15.305 20.356 9.887 47.104 15.33 75.316 15.33 28.215 0 54.962-5.443 75.32-15.33zM364.277 58.485c-53.97 0-97.722 21.248-97.722 47.46 0 26.21 43.752 47.458 97.722 47.458 53.97 0 97.723-21.248 97.723-47.457 0-26.213-43.752-47.46-97.723-47.46zm6.676 71.733l-.003 6.355-12.39-.02v-5.687c-5.94-.383-13.794-1.98-19.577-4.326l4.1-10.475c5.366 1.547 12.752 3.42 19.132 3.432 1.407.002 2.766-.086 4.045-.29 6.18-.978 7.74-5.05.465-7.362-6.143-2.037-27.293-4.193-27.29-17.174 0-5.378 5.497-12.76 19.138-14.923l.002-6.453 12.39.02v5.92c5.307.28 10.723 1.005 16.974 2.452l-3.33 10.703c-4.025-1.013-10.425-2.73-16.764-2.74-.463 0-.926.01-1.39.026-8.37.33-8.975 4.816-3.33 6.898 11.578 3.865 28.348 7.16 28.344 18.623.014 8.863-9.387 13.894-20.517 15.02zm68.642 22.086c9.046-4.395 16.56-9.53 22.405-15.303v18.888c0 26.21-43.752 47.46-97.723 47.46-53.97 0-97.722-21.25-97.722-47.46V137c5.847 5.774 13.357 10.91 22.405 15.304 20.356 9.887 47.104 15.332 75.316 15.332 28.215 0 54.962-5.446 75.32-15.332zm0 49.943c9.046-4.393 16.56-9.53 22.405-15.305v18.887c0 26.21-43.752 47.46-97.723 47.46-53.97 0-97.722-21.25-97.722-47.46V186.94c5.847 5.773 13.357 10.912 22.405 15.305 20.356 9.887 47.104 15.33 75.316 15.33 28.215 0 54.962-5.443 75.32-15.33z"/></svg>
+        Shopping.
+      </a>
+    </h1>
+    <nav class="primary-navigation">
+      <ul class="list-unstyled list-inline">
+        <li><nav-search></nav-search></li>
+        <li><a href="#" title="Login">Login</a></li>
+        <li><nav-cart-toggle></nav-cart-toggle></li>
+      </ul>
+    </nav>
+    </div>
+  </header>
+
+  <section-shop-notifications></section-shop-notifications>
+
+  <section-cart-contents></section-cart-contents>
+
+  <section class="products container">
+    <products-filter></products-filter>
+    <products-grid></products-grid>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p class="colophon">&copy; Some Awesome Company</p>
+    </div>
+  </footer>
+
+  <!-- Load Javascript -->
+  <script src="js/vendor/lodash.min.js"></script>
+  <script src="js/vendor/angular.min.js"></script>
+  <script src="js/vendor/angular-strap.min.js"></script>
+  <script src="js/vendor/angular-strap.tpl.min.js"></script>
+  <script src="js/vendor/angular-lodash.js"></script>
+  <script src="js/vendor/ngStorage.min.js"></script>
+  <script src="js/m-cart/controllers.js"></script>
+  <script src="js/m-cart/directives.js"></script>
+  <script src="js/m-cart/services.js"></script>
+  <script src="js/m-notification/controllers.js"></script>
+  <script src="js/m-notification/directives.js"></script>
+  <script src="js/m-notification/services.js"></script>
+  <script src="js/m-product/controllers.js"></script>
+  <script src="js/m-product/directives.js"></script>
+  <script src="js/m-product/services.js"></script>
+  <script src="js/m-search/controllers.js"></script>
+  <script src="js/m-search/directives.js"></script>
+  <script src="js/m-utility/directives.js"></script>
+  <script src="js/m-utility/filters.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+
+</html>

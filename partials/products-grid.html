@@ -1,0 +1,9 @@
+
+<ul class="row list-group list-unstyled" ng-controller="ProductGridController as productCtrl" masonry>
+  <li class="item col-xs-12 col-sm-6 col-md-4 col-lg-3" ng-repeat="product in productCtrl.products" ng-style="{'background-image':'url({{product.thumb}})'}">
+    <h3>{{product.name}}</h3>
+    <p class="quantity"><input type="number" ng-model="product.qty" ng-init="product.qty = 1" min="1" max="100"></p>
+    <p class="price">{{product.price}}</p>
+    <button class="btn btn-primary btn-add-cart" type="button" ng-click="cart.addToCart(product)">Add</button>
+  </li>
+</ul>
